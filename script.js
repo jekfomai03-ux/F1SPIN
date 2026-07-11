@@ -7,7 +7,7 @@ const PRIZES = [
     { name: "20 бонусов",              hours: 0.25, rarity: "common",    icon: "⏳", basicWeight: 24 },
     { name: "30 бонусов",              hours: 0.5,  rarity: "common",    icon: "⏳", basicWeight: 24 },
     { name: "120 бонусов",                 hours: 1,    rarity: "rare",      icon: "🕐", basicWeight: 18 },
-    { name: "флеш",              hours: 1.5,  rarity: "rare",      icon: "🕐", basicWeight: 16 },
+    { name: "флеш",              hours: 1.5,  rarity: "rare",      icon: "🥤", basicWeight: 16 },
     { name: "сникерс",    hours: 2,    rarity: "rare",      icon: "⚡", basicWeight: 14 },
     { name: "390 бонусов",     hours: 3,    rarity: "epic",      icon: "🥤" },
     { name: "290 бонусов+флеш",     hours: 3,    rarity: "epic",      icon: "🥤" },
