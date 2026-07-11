@@ -13,7 +13,7 @@ const PRIZES = [
     { name: "290 бонусов+флеш",     hours: 3,    rarity: "epic",      icon: "🥤" },
     { name: "600 бонусов",     hours: 5,    rarity: "legendary", icon: "💎" },
     { name: "400 бонусов+Red Bull",     hours: 5,    rarity: "legendary", icon: "💎" },
-    { name: "1000 бонусов+сникерс+Red Bull",    hours: 12,   rarity: "mythical",  icon: "🎫", note: "1 раз за цикл (до 100-го спина)" },
+    { name: "1000 бонусов+сникерс+Red Bull",    hours: 12,   rarity: "mythical",  icon: "🎫" },
     { name: "3000 бонусов",               hours: 24,   rarity: "godlike",   icon: "👑" }
 ];
 
