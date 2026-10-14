@@ -568,10 +568,6 @@ body {
         white-space: nowrap;
     }
 
-    .roulette-track {
-        padding: 6px 0;
-    }
-
     .roulette-wrapper::before,
     .roulette-wrapper::after {
         width: 40px;
