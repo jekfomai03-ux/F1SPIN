@@ -53,17 +53,35 @@ const winSheetOk = document.getElementById("winSheetOk");
 let isSpinning = false;
 let activeAnimation = null;
 
+function resolveWinner(winner) {
+    if (winner && winner.name) return winner;
+
+    const el = rouletteTrack.children[WIN_INDEX];
+    const rarityClass = el
+        ? [...el.classList].find(cls => cls.startsWith("rarity-"))
+        : null;
+
+    return {
+        icon: el?.querySelector(".item-icon")?.textContent?.trim() || "🎁",
+        name: el?.querySelector(".item-name")?.textContent?.trim() || "Приз",
+        rarity: rarityClass ? rarityClass.replace("rarity-", "") : "common"
+    };
+}
+
 function openWinSheet(winner) {
-    const isEpic = winner.rarity === "mythical" || winner.rarity === "red" || winner.rarity === "godlike";
+    const prize = resolveWinner(winner);
+    const isEpic = prize.rarity === "mythical" || prize.rarity === "red" || prize.rarity === "godlike";
+
     resultTitle.textContent = isEpic ? "🔥 Эпический выигрыш" : "🎉 Ваш приз:";
-    resultPrize.innerHTML = `${winner.icon} ${winner.name} — <span class="prize-free">бесплатно</span>`;
+    resultPrize.textContent = "";
+    resultPrize.innerHTML = `${prize.icon} ${prize.name} — <span class="prize-free">бесплатно</span>`;
     resultPrize.classList.add("win-glow");
     setTimeout(() => resultPrize.classList.remove("win-glow"), 2000);
 
     winSheet.hidden = false;
-    requestAnimationFrame(() => {
-        winSheet.classList.add("is-open");
-    });
+    // Force reflow so the slide-up animation always starts from the closed state.
+    void winSheet.offsetHeight;
+    winSheet.classList.add("is-open");
 }
 
 function closeWinSheet() {
@@ -164,6 +182,7 @@ function nextSpinNumber() {
 
 function pickFromRarity(rarity) {
     const pool = PRIZES.filter(prize => prize.rarity === rarity);
+    if (!pool.length) return { ...PRIZES[0] };
     return { ...pool[Math.floor(Math.random() * pool.length)] };
 }
 
