@@ -3,16 +3,16 @@ const STRIP_LENGTH = 60;
 const SPIN_DURATION = 8500;
 
 const PRIZES = [
-    { name: "20 бонусов", icon: "⏳", sub: "20 бонусов", weight: 30, rarity: "common" },
-    { name: "30 бонусов", icon: "⏳", sub: "30 бонусов", weight: 22, rarity: "common" },
-    { name: "110 бонусов", icon: "🕐", sub: "110 бонусов", weight: 8, rarity: "rare" },
-    { name: "120 бонусов", icon: "🕐", sub: "120 бонусов", weight: 8, rarity: "rare" },
-    { name: "130 бонусов", icon: "🕐", sub: "130 бонусов", weight: 8, rarity: "rare" },
-    { name: "390 бонусов", icon: "💰", sub: "390 бонусов", weight: 6, rarity: "legendary" },
-    { name: "290 бонусов", icon: "🥤", sub: "290 бонусов", weight: 3, rarity: "legendary" },
-    { name: "400 бонусов", icon: "💎", sub: "400 бонусов", weight: 2, rarity: "mythical" },
-    { name: "600 бонусов", icon: "💎", sub: "600 бонусов", weight: 2, rarity: "mythical" },
-    { name: "1000 бонусов", icon: "🎫", sub: "1000 бонусов", weight: 1, rarity: "godlike" }
+    { name: "20 бонусов", icon: "⏳", weight: 30, rarity: "common" },
+    { name: "30 бонусов", icon: "⏳", weight: 22, rarity: "common" },
+    { name: "110 бонусов", icon: "🕐", weight: 8, rarity: "rare" },
+    { name: "120 бонусов", icon: "🕐", weight: 8, rarity: "rare" },
+    { name: "130 бонусов", icon: "🕐", weight: 8, rarity: "rare" },
+    { name: "390 бонусов", icon: "💰", weight: 6, rarity: "legendary" },
+    { name: "290 бонусов", icon: "🥤", weight: 3, rarity: "legendary" },
+    { name: "400 бонусов", icon: "💎", weight: 2, rarity: "mythical" },
+    { name: "600 бонусов", icon: "💎", weight: 2, rarity: "mythical" },
+    { name: "1000 бонусов", icon: "🎫", weight: 1, rarity: "godlike" }
 ];
 
 const DROP_EVERY = [
