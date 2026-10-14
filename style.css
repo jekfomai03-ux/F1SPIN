@@ -12,8 +12,9 @@
     --pad-x: 12px;
     --pad-y: 14px;
     --logo: 120px;
-    --roulette-h: 168px;
-    --item-w: 124px;
+    --roulette-h: 170px;
+    --item-w: 160px;
+    --item-h: 170px;
     --title: 1.4rem;
     --gap: 10px;
 }
@@ -185,9 +186,9 @@ body {
 
 .roulette-track {
     display: flex;
-    align-items: stretch;
+    align-items: center;
     height: 100%;
-    padding: 10px 0;
+    padding: 0;
     will-change: transform;
     transform: translate3d(0, 0, 0);
 }
@@ -195,6 +196,7 @@ body {
 .roulette-item {
     flex-shrink: 0;
     width: var(--item-w);
+    height: var(--item-h);
     margin: 0 5px;
     background: linear-gradient(180deg, #1a1a1e 0%, #0c0c0e 100%);
     border: 1px solid var(--card-edge);
@@ -206,6 +208,11 @@ body {
     position: relative;
     overflow: hidden;
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+.roulette-item.rarity-common {
+    width: 160px;
+    height: 170px;
 }
 
 .roulette-item::after {
@@ -434,8 +441,9 @@ body {
         --pad-x: 16px;
         --pad-y: 12px;
         --logo: 112px;
-        --roulette-h: 176px;
-        --item-w: 140px;
+        --roulette-h: 170px;
+        --item-w: 160px;
+        --item-h: 170px;
         --title: 1.65rem;
         --gap: 10px;
     }
@@ -507,8 +515,9 @@ body {
 @media (min-width: 900px) {
     :root {
         --logo: 120px;
-        --roulette-h: 188px;
-        --item-w: 156px;
+        --roulette-h: 170px;
+        --item-w: 160px;
+        --item-h: 170px;
         --title: 1.85rem;
         --gap: 12px;
     }
@@ -531,8 +540,9 @@ body {
         --pad-x: 12px;
         --pad-y: 8px;
         --logo: 72px;
-        --roulette-h: 132px;
-        --item-w: 118px;
+        --roulette-h: 170px;
+        --item-w: 160px;
+        --item-h: 170px;
         --title: 1.2rem;
         --gap: 6px;
     }
@@ -629,8 +639,9 @@ body {
 @media (orientation: landscape) and (max-height: 620px) {
     :root {
         --logo: 56px;
-        --roulette-h: 112px;
-        --item-w: 104px;
+        --roulette-h: 170px;
+        --item-w: 160px;
+        --item-h: 170px;
         --title: 1.05rem;
         --gap: 4px;
     }
@@ -658,8 +669,9 @@ body {
 @media (orientation: portrait) and (min-width: 600px) and (max-width: 999px) {
     :root {
         --logo: 128px;
-        --roulette-h: 190px;
-        --item-w: 148px;
+        --roulette-h: 170px;
+        --item-w: 160px;
+        --item-h: 170px;
         --title: 1.75rem;
         --gap: 12px;
         --pad-y: 16px;
