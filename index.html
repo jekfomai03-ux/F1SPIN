@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>F1 Club — Case Opening</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="case-container">
+        <header class="header">
+            <h1>F1 Club — Case<br>Opening</h1>
+        </header>
+
+        <button type="button" class="logo-badge" id="caseIcon" aria-label="Открыть кейс">
+            <img src="logo-clean.png" alt="F1 Computer Club" width="148" height="148">
+        </button>
+
+        <section class="roulette-section" aria-label="Рулетка призов">
+            <div class="roulette-wrapper">
+                <div class="roulette-indicator"></div>
+                <div class="roulette-viewport" id="rouletteViewport">
+                    <div class="roulette-track" id="rouletteTrack"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- <section class="result-panel" aria-live="polite">
+            <div class="result-title" id="resultTitle">Нажмите «Открыть кейс»</div>
+            <div class="result-prize" id="resultPrize"></div>
+        </section> -->
+
+        <button class="open-btn" id="openCaseBtn" type="button">🔓 Открыть кейс</button>
+
+        <div class="prizes-legend" id="prizesLegend"></div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

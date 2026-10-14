@@ -1,0 +1,545 @@
+:root {
+    --bg: #050505;
+    --panel: #0b0b0d;
+    --card: #121214;
+    --card-edge: #2a2a2e;
+    --red: #e10600;
+    --red-hot: #ff2a22;
+    --red-dim: rgba(225, 6, 0, 0.55);
+    --text: #f4f4f4;
+    --muted: #8d8d93;
+    --font: "Montserrat", sans-serif;
+    --pad-x: 12px;
+    --pad-y: 14px;
+    --logo: 120px;
+    --roulette-h: 168px;
+    --item-w: 124px;
+    --title: 1.4rem;
+    --gap: 10px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+}
+
+html {
+    color-scheme: dark;
+    height: 100%;
+}
+
+body {
+    min-height: 100%;
+    min-height: 100dvh;
+    background: #000;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    font-family: var(--font);
+    color: var(--text);
+    padding: var(--pad-y) var(--pad-x);
+}
+
+.case-container {
+    width: min(430px, 100%);
+    max-height: calc(100dvh - (var(--pad-y) * 2));
+    overflow: auto;
+    background: radial-gradient(ellipse 80% 40% at 50% 0%, rgba(225, 6, 0, 0.16), transparent 55%),
+        var(--panel);
+    border-radius: 24px;
+    border: 1px solid rgba(225, 6, 0, 0.85);
+    box-shadow:
+        0 0 0 1px rgba(225, 6, 0, 0.25),
+        0 0 28px rgba(225, 6, 0, 0.45),
+        0 0 70px rgba(225, 6, 0, 0.18),
+        inset 0 0 40px rgba(225, 6, 0, 0.06);
+    padding: 18px 14px 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: var(--gap);
+    flex-shrink: 0;
+}
+
+.header h1 {
+    font-size: var(--title);
+    font-weight: 800;
+    line-height: 1.05;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--red-hot);
+}
+
+.logo-badge {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: var(--logo);
+    height: var(--logo);
+    margin: 0 auto var(--gap);
+    padding: 6px;
+    border: none;
+    border-radius: 50%;
+    background: #fff;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.55);
+    flex-shrink: 0;
+}
+
+.logo-badge img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.logo-badge.shake {
+    animation: shakeCase 0.45s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+}
+
+@keyframes shakeCase {
+    0%, 100% { transform: translate(0, 0) rotate(0deg); }
+    20% { transform: translate(-4px, 0) rotate(-3deg); }
+    40% { transform: translate(4px, 0) rotate(3deg); }
+    60% { transform: translate(-2px, 0) rotate(-2deg); }
+    80% { transform: translate(2px, 0) rotate(2deg); }
+}
+
+.roulette-section {
+    width: 100%;
+    flex-shrink: 0;
+}
+
+.roulette-wrapper {
+    position: relative;
+    margin: 2px 0 var(--gap);
+}
+
+.roulette-wrapper::before,
+.roulette-wrapper::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 32px;
+    z-index: 3;
+    pointer-events: none;
+}
+
+.roulette-wrapper::before {
+    left: 0;
+    background: linear-gradient(to right, var(--panel), transparent);
+}
+
+.roulette-wrapper::after {
+    right: 0;
+    background: linear-gradient(to left, var(--panel), transparent);
+}
+
+.roulette-indicator {
+    position: absolute;
+    top: -2px;
+    bottom: -2px;
+    left: 50%;
+    width: 2px;
+    transform: translateX(-50%);
+    background: linear-gradient(to bottom, transparent, #fff 18%, var(--red-hot) 50%, #fff 82%, transparent);
+    box-shadow: 0 0 12px var(--red-hot), 0 0 4px #fff;
+    z-index: 4;
+    pointer-events: none;
+}
+
+.roulette-indicator::before,
+.roulette-indicator::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+}
+
+.roulette-indicator::before {
+    top: 0;
+    border-top: 10px solid var(--red-hot);
+    filter: drop-shadow(0 0 4px var(--red));
+}
+
+.roulette-indicator::after {
+    bottom: 0;
+    border-bottom: 10px solid var(--red-hot);
+    filter: drop-shadow(0 0 4px var(--red));
+}
+
+.roulette-viewport {
+    overflow: hidden;
+    height: var(--roulette-h);
+}
+
+.roulette-track {
+    display: flex;
+    align-items: stretch;
+    height: 100%;
+    padding: 10px 0;
+    will-change: transform;
+    transform: translate3d(0, 0, 0);
+}
+
+.roulette-item {
+    flex-shrink: 0;
+    width: var(--item-w);
+    margin: 0 5px;
+    background: linear-gradient(180deg, #1a1a1e 0%, #0c0c0e 100%);
+    border: 1px solid var(--card-edge);
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+.roulette-item::after {
+    content: "";
+    position: absolute;
+    left: 10px;
+    right: 10px;
+    bottom: 0;
+    height: 3px;
+    border-radius: 3px 3px 0 0;
+    background: var(--rarity-color, #555);
+    box-shadow: 0 0 8px var(--rarity-color, #555);
+}
+
+.roulette-item.winner {
+    border-color: var(--rarity-color, var(--red));
+    box-shadow: 0 0 18px var(--rarity-color, var(--red));
+}
+
+.item-icon {
+    font-size: 1.55rem;
+    line-height: 1;
+    margin-bottom: 5px;
+}
+
+.item-name {
+    font-size: 0.62rem;
+    font-weight: 800;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    padding: 0 8px;
+    line-height: 1.15;
+    color: #fff;
+}
+
+.item-sub {
+    margin-top: 3px;
+    margin-bottom: 5px;
+    font-size: 0.56rem;
+    line-height: 1.2;
+    color: var(--muted);
+    text-align: center;
+    padding: 0 8px;
+}
+
+.rarity-common    { --rarity-color: #9ca3af; }
+.rarity-rare      { --rarity-color: #3b82f6; }
+.rarity-epic      { --rarity-color: #22d3ee; }
+.rarity-legendary { --rarity-color: #a855f7; }
+.rarity-mythical  { --rarity-color: #ec4899; }
+.rarity-red       { --rarity-color: #ff2a22; }
+.rarity-godlike   { --rarity-color: #f5c542; }
+
+.result-panel {
+    min-height: 52px;
+    text-align: center;
+    margin-bottom: 8px;
+    flex-shrink: 0;
+}
+
+.result-title {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #c8c8cc;
+}
+
+.result-prize {
+    margin-top: 4px;
+    font-size: 1rem;
+    font-weight: 800;
+    color: var(--red-hot);
+    letter-spacing: 0.01em;
+    line-height: 1.25;
+    padding: 0 6px;
+}
+
+.result-prize.win-glow {
+    animation: pulseWin 0.55s ease 3;
+}
+
+@keyframes pulseWin {
+    50% { filter: brightness(1.35); }
+}
+
+.open-btn {
+    width: 100%;
+    display: block;
+    padding: 12px 14px;
+    margin-bottom: var(--gap);
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--red-hot);
+    background: #140406;
+    border: 2px solid var(--red);
+    border-radius: 12px;
+    cursor: pointer;
+    box-shadow: 0 0 16px rgba(225, 6, 0, 0.25);
+    flex-shrink: 0;
+}
+
+.open-btn:hover:not(:disabled) {
+    background: #1c0709;
+    box-shadow: 0 0 22px rgba(225, 6, 0, 0.4);
+}
+
+.open-btn:active:not(:disabled) {
+    transform: translateY(1px);
+}
+
+.open-btn:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+}
+
+.prizes-legend {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 6px;
+    flex-shrink: 1;
+    min-height: 0;
+}
+
+.legend-item {
+    font-size: 0.64rem;
+    font-weight: 700;
+    color: #d7d7db;
+    background: #141416;
+    border: 1px solid #2c2c30;
+    border-bottom: 3px solid var(--rarity-color, #666);
+    border-radius: 8px;
+    padding: 5px 8px 4px;
+}
+
+/* Honor Pad X7 / small tablets: ~800–1340 CSS px, short landscape height */
+@media (min-width: 600px) {
+    :root {
+        --pad-x: 16px;
+        --pad-y: 12px;
+        --logo: 112px;
+        --roulette-h: 176px;
+        --item-w: 140px;
+        --title: 1.65rem;
+        --gap: 10px;
+    }
+
+    body {
+        align-items: center;
+    }
+
+    .case-container {
+        width: min(720px, 100%);
+        border-radius: 28px;
+        padding: 20px 22px 16px;
+    }
+
+    .roulette-wrapper::before,
+    .roulette-wrapper::after {
+        width: 48px;
+    }
+
+    .item-icon {
+        font-size: 1.85rem;
+    }
+
+    .item-name {
+        font-size: 0.72rem;
+    }
+
+    .item-sub {
+        font-size: 0.64rem;
+    }
+
+    .open-btn {
+        max-width: 480px;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 1.1rem;
+        padding: 13px 18px;
+    }
+
+    .legend-item {
+        font-size: 0.74rem;
+        padding: 6px 11px 5px;
+    }
+}
+
+/* Wider tablet portrait / landscape (Honor Pad X7 landscape ≈ 1340×800) */
+@media (min-width: 900px) {
+    :root {
+        --logo: 120px;
+        --roulette-h: 188px;
+        --item-w: 156px;
+        --title: 1.85rem;
+        --gap: 12px;
+    }
+
+    .case-container {
+        width: min(860px, 100%);
+        padding: 22px 28px 18px;
+        border-radius: 32px;
+    }
+
+    .open-btn {
+        max-width: 520px;
+        font-size: 1.15rem;
+    }
+}
+
+/* Landscape on short screens (Pad X7: 800px physical height, browser chrome eats more) */
+@media (orientation: landscape) and (max-height: 860px) {
+    :root {
+        --pad-x: 12px;
+        --pad-y: 8px;
+        --logo: 72px;
+        --roulette-h: 132px;
+        --item-w: 118px;
+        --title: 1.2rem;
+        --gap: 6px;
+    }
+
+    body {
+        align-items: center;
+        overflow: hidden;
+    }
+
+    .case-container {
+        width: min(960px, 100%);
+        max-height: calc(100dvh - 16px);
+        overflow: hidden;
+        padding: 10px 16px 10px;
+        border-radius: 20px;
+    }
+
+    .header h1 br {
+        display: none;
+    }
+
+    .header h1 {
+        white-space: nowrap;
+    }
+
+    .roulette-track {
+        padding: 6px 0;
+    }
+
+    .roulette-wrapper::before,
+    .roulette-wrapper::after {
+        width: 40px;
+    }
+
+    .item-icon {
+        font-size: 1.35rem;
+        margin-bottom: 3px;
+    }
+
+    .item-name {
+        font-size: 0.58rem;
+    }
+
+    .item-sub {
+        font-size: 0.52rem;
+        margin-bottom: 3px;
+    }
+
+    .open-btn {
+        max-width: 420px;
+        padding: 10px 14px;
+        font-size: 0.95rem;
+        margin-bottom: 6px;
+    }
+
+    .prizes-legend {
+        gap: 5px;
+        max-height: 56px;
+        overflow: hidden;
+    }
+
+    .legend-item {
+        font-size: 0.6rem;
+        padding: 4px 8px 3px;
+    }
+}
+
+/* Very short landscape (browser UI / address bar) */
+@media (orientation: landscape) and (max-height: 620px) {
+    :root {
+        --logo: 56px;
+        --roulette-h: 112px;
+        --item-w: 104px;
+        --title: 1.05rem;
+        --gap: 4px;
+    }
+
+    .case-container {
+        padding: 8px 14px;
+    }
+
+    .logo-badge {
+        padding: 4px;
+    }
+
+    .prizes-legend {
+        display: none;
+    }
+
+    .open-btn {
+        padding: 8px 12px;
+        font-size: 0.88rem;
+        border-width: 1.5px;
+    }
+}
+
+/* Portrait tablet: use height without overflowing */
+@media (orientation: portrait) and (min-width: 600px) and (max-width: 999px) {
+    :root {
+        --logo: 128px;
+        --roulette-h: 190px;
+        --item-w: 148px;
+        --title: 1.75rem;
+        --gap: 12px;
+        --pad-y: 16px;
+    }
+
+    body {
+        align-items: center;
+    }
+
+    .case-container {
+        width: min(640px, 100%);
+        max-height: calc(100dvh - 32px);
+    }
+}
