@@ -11,11 +11,11 @@
     --font: "Montserrat", sans-serif;
     --pad-x: 12px;
     --pad-y: 14px;
-    --logo: 120px;
+    --logo: 240px;
     --roulette-h: 170px;
     --item-w: 160px;
     --item-h: 170px;
-    --title: 1.4rem;
+    --title: 2.8rem;
     --gap: 10px;
 }
 
@@ -431,11 +431,11 @@ body {
     :root {
         --pad-x: 16px;
         --pad-y: 12px;
-        --logo: 112px;
+        --logo: 224px;
         --roulette-h: 170px;
         --item-w: 160px;
         --item-h: 170px;
-        --title: 1.65rem;
+        --title: 3.3rem;
         --gap: 10px;
     }
 
@@ -501,11 +501,11 @@ body {
 /* Wider tablet portrait / landscape (Honor Pad X7 landscape ≈ 1340×800) */
 @media (min-width: 900px) {
     :root {
-        --logo: 120px;
+        --logo: 240px;
         --roulette-h: 170px;
         --item-w: 160px;
         --item-h: 170px;
-        --title: 1.85rem;
+        --title: 3.7rem;
         --gap: 12px;
     }
 
@@ -526,11 +526,11 @@ body {
     :root {
         --pad-x: 12px;
         --pad-y: 8px;
-        --logo: 72px;
+        --logo: 144px;
         --roulette-h: 170px;
         --item-w: 160px;
         --item-h: 170px;
-        --title: 1.2rem;
+        --title: 2.4rem;
         --gap: 6px;
     }
 
@@ -616,11 +616,11 @@ body {
 /* Very short landscape (browser UI / address bar) */
 @media (orientation: landscape) and (max-height: 620px) {
     :root {
-        --logo: 56px;
+        --logo: 112px;
         --roulette-h: 170px;
         --item-w: 160px;
         --item-h: 170px;
-        --title: 1.05rem;
+        --title: 2.1rem;
         --gap: 4px;
     }
 
@@ -646,11 +646,11 @@ body {
 /* Portrait tablet: use height without overflowing */
 @media (orientation: portrait) and (min-width: 600px) and (max-width: 999px) {
     :root {
-        --logo: 128px;
+        --logo: 256px;
         --roulette-h: 170px;
         --item-w: 160px;
         --item-h: 170px;
-        --title: 1.75rem;
+        --title: 3.5rem;
         --gap: 12px;
         --pad-y: 16px;
     }
