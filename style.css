@@ -380,18 +380,21 @@ body {
 
 .open-btn {
     width: 100%;
+    max-width: 420px;
     display: block;
-    padding: 24px 28px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 14px 18px;
     margin-bottom: var(--gap);
     font-family: inherit;
-    font-size: 2rem;
+    font-size: 1.05rem;
     font-weight: 800;
     letter-spacing: 0.08em;
     text-transform: uppercase;
     color: var(--red-hot);
     background: #140406;
-    border: 4px solid var(--red);
-    border-radius: 24px;
+    border: 2px solid var(--red);
+    border-radius: 14px;
     cursor: pointer;
     box-shadow: 0 0 16px rgba(225, 6, 0, 0.25);
     flex-shrink: 0;
@@ -468,11 +471,10 @@ body {
     }
 
     .open-btn {
-        max-width: 960px;
-        margin-left: auto;
-        margin-right: auto;
-        font-size: 2.2rem;
-        padding: 26px 36px;
+        max-width: 480px;
+        font-size: 1.2rem;
+        padding: 15px 22px;
+        border-radius: 14px;
     }
 
     .legend-item {
@@ -521,8 +523,9 @@ body {
     }
 
     .open-btn {
-        max-width: 1040px;
-        font-size: 2.3rem;
+        max-width: 520px;
+        font-size: 1.25rem;
+        padding: 16px 24px;
     }
 }
 
@@ -574,10 +577,13 @@ body {
         font-size: 0.58rem;
     }
 
+    /* Honor Pad X7 landscape: compact but easy to tap */
     .open-btn {
-        max-width: 840px;
-        padding: 20px 28px;
-        font-size: 1.9rem;
+        max-width: 460px;
+        padding: 12px 20px;
+        font-size: 1.15rem;
+        border-width: 2px;
+        border-radius: 12px;
         margin-bottom: 6px;
     }
 
@@ -642,9 +648,11 @@ body {
     }
 
     .open-btn {
-        padding: 16px 24px;
-        font-size: 1.76rem;
-        border-width: 3px;
+        max-width: 400px;
+        padding: 10px 16px;
+        font-size: 1.05rem;
+        border-width: 2px;
+        border-radius: 12px;
     }
 }
 
@@ -667,5 +675,12 @@ body {
     .case-container {
         width: min(640px, 100%);
         max-height: calc(100dvh - 32px);
+    }
+
+    .open-btn {
+        max-width: 440px;
+        font-size: 1.2rem;
+        padding: 15px 22px;
+        border-radius: 14px;
     }
 }
