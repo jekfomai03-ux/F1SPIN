@@ -411,8 +411,8 @@ body {
     flex-wrap: wrap;
     justify-content: center;
     gap: 6px;
-    flex-shrink: 1;
-    min-height: 0;
+    flex-shrink: 0;
+    margin-top: 4px;
 }
 
 .legend-item {
@@ -542,7 +542,7 @@ body {
     .case-container {
         width: min(960px, 100%);
         max-height: calc(100dvh - 16px);
-        overflow: hidden;
+        overflow: auto;
         padding: 50px 28px 45px;
         border-radius: 20px;
     }
@@ -577,9 +577,9 @@ body {
     }
 
     .prizes-legend {
+        display: flex;
         gap: 5px;
-        max-height: 56px;
-        overflow: hidden;
+        margin-top: 2px;
     }
 
     .legend-item {
@@ -633,7 +633,7 @@ body {
     }
 
     .prizes-legend {
-        display: none;
+        display: flex;
     }
 
     .open-btn {
