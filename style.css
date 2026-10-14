@@ -182,6 +182,7 @@ body {
 .roulette-viewport {
     overflow: hidden;
     height: var(--roulette-h);
+    margin: 18px 0;
 }
 
 .roulette-track {
