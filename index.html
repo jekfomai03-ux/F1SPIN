@@ -28,15 +28,20 @@
             </div>
         </section>
 
-        <!-- <section class="result-panel" aria-live="polite">
-            <div class="result-title" id="resultTitle">Нажмите «Открыть кейс»</div>
-            <div class="result-prize" id="resultPrize"></div>
-        </section> -->
-
         <button class="open-btn" id="openCaseBtn" type="button">🔓 Открыть кейс</button>
 
         <div class="prizes-legend" id="prizesLegend"></div>
     </main>
+
+    <div class="win-sheet" id="winSheet" hidden>
+        <button type="button" class="win-sheet-backdrop" id="winSheetClose" aria-label="Закрыть"></button>
+        <section class="win-sheet-panel" role="dialog" aria-modal="true" aria-labelledby="resultTitle" aria-live="polite">
+            <div class="win-sheet-handle" aria-hidden="true"></div>
+            <div class="result-title" id="resultTitle">🎉 Ваш приз:</div>
+            <div class="result-prize" id="resultPrize"></div>
+            <button type="button" class="win-sheet-ok" id="winSheetOk">Ок</button>
+        </section>
+    </div>
 
     <script src="script.js"></script>
 </body>

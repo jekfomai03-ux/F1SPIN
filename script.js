@@ -46,9 +46,39 @@ const caseIcon = document.getElementById("caseIcon");
 const resultTitle = document.getElementById("resultTitle");
 const resultPrize = document.getElementById("resultPrize");
 const prizesLegend = document.getElementById("prizesLegend");
+const winSheet = document.getElementById("winSheet");
+const winSheetClose = document.getElementById("winSheetClose");
+const winSheetOk = document.getElementById("winSheetOk");
 
 let isSpinning = false;
 let activeAnimation = null;
+
+function openWinSheet(winner) {
+    const isEpic = winner.rarity === "mythical" || winner.rarity === "red" || winner.rarity === "godlike";
+    resultTitle.textContent = isEpic ? "🔥 Эпический выигрыш" : "🎉 Ваш приз:";
+    resultPrize.innerHTML = `${winner.icon} ${winner.name} — <span class="prize-free">бесплатно</span>`;
+    resultPrize.classList.add("win-glow");
+    setTimeout(() => resultPrize.classList.remove("win-glow"), 2000);
+
+    winSheet.hidden = false;
+    requestAnimationFrame(() => {
+        winSheet.classList.add("is-open");
+    });
+}
+
+function closeWinSheet() {
+    if (!winSheet.classList.contains("is-open")) return;
+    winSheet.classList.remove("is-open");
+    const onEnd = (event) => {
+        if (event.target !== winSheet.querySelector(".win-sheet-panel")) return;
+        winSheet.hidden = true;
+        winSheet.removeEventListener("transitionend", onEnd);
+    };
+    winSheet.addEventListener("transitionend", onEnd);
+    setTimeout(() => {
+        if (!winSheet.classList.contains("is-open")) winSheet.hidden = true;
+    }, 450);
+}
 
 function getItemWidth() {
     const first = rouletteTrack.querySelector(".roulette-item");
@@ -211,16 +241,7 @@ function finishSpin(winner) {
     centeredIndex = WIN_INDEX;
     openBtn.disabled = false;
     highlightWinner();
-
-    const isEpic = winner.rarity === "mythical" || winner.rarity === "red" || winner.rarity === "godlike";
-    if (resultTitle) {
-        resultTitle.textContent = isEpic ? "🔥 Эпический выигрыш" : "🎉 Ваш приз:";
-    }
-    if (resultPrize) {
-        resultPrize.textContent = `${winner.icon} ${winner.name} — бесплатно`;
-        resultPrize.classList.add("win-glow");
-        setTimeout(() => resultPrize.classList.remove("win-glow"), 2000);
-    }
+    openWinSheet(winner);
 
     stopSpinSound();
     caseIcon.classList.add("shake");
@@ -232,8 +253,7 @@ function openCase() {
 
     isSpinning = true;
     openBtn.disabled = true;
-    if (resultTitle) resultTitle.textContent = "Крутим...";
-    if (resultPrize) resultPrize.textContent = "";
+    closeWinSheet();
 
     const winner = rollPrize();
     buildStrip(winner);
@@ -254,6 +274,11 @@ function openCase() {
 
 openBtn.addEventListener("click", openCase);
 caseIcon.addEventListener("click", () => { if (!isSpinning) openCase(); });
+winSheetClose.addEventListener("click", closeWinSheet);
+winSheetOk.addEventListener("click", closeWinSheet);
+document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") closeWinSheet();
+});
 
 window.addEventListener("resize", () => {
     if (isSpinning) return;
