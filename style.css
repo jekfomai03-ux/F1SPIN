@@ -249,16 +249,6 @@ body {
     color: #fff;
 }
 
-.item-sub {
-    margin-top: 3px;
-    margin-bottom: 5px;
-    font-size: 0.56rem;
-    line-height: 1.2;
-    color: var(--muted);
-    text-align: center;
-    padding: 0 8px;
-}
-
 .rarity-common    { --rarity-color: #9ca3af; }
 .rarity-rare      { --rarity-color: #3b82f6; }
 .rarity-epic      { --rarity-color: #22d3ee; }
@@ -471,10 +461,6 @@ body {
         font-size: 0.72rem;
     }
 
-    .item-sub {
-        font-size: 0.64rem;
-    }
-
     .open-btn {
         max-width: 480px;
         margin-left: auto;
@@ -580,11 +566,6 @@ body {
 
     .item-name {
         font-size: 0.58rem;
-    }
-
-    .item-sub {
-        font-size: 0.52rem;
-        margin-bottom: 3px;
     }
 
     .open-btn {

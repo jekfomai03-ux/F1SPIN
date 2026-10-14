@@ -180,7 +180,6 @@ function createItemElement(prize) {
     el.innerHTML = `
         <div class="item-icon">${prize.icon}</div>
         <div class="item-name">${prize.name}</div>
-        <div class="item-sub">${prize.sub}</div>
     `;
     return el;
 }
