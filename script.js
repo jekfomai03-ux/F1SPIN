@@ -56,7 +56,6 @@ let activeAnimation = null;
 function openWinSheet(winner) {
     const isEpic = winner.rarity === "mythical" || winner.rarity === "red" || winner.rarity === "godlike";
     resultTitle.textContent = isEpic ? "🔥 Эпический выигрыш" : "🎉 Ваш приз:";
-    resultPrize.innerHTML = `${winner.icon} ${winner.name} — <span class="prize-free">бесплатно</span>`;
     resultPrize.classList.add("win-glow");
     setTimeout(() => resultPrize.classList.remove("win-glow"), 2000);
 
