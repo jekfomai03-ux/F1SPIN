@@ -72,7 +72,8 @@ function resolveWinner(winner) {
 
 function openWinSheet(winner) {
     const prize = resolveWinner(winner);
-    const isEpic = prize.rarity === "mythical" || prize.rarity === "red" || prize.rarity === "godlike";
+    const isEpic = prize.rarity === "mythical" || prize.rarity === "red" || prize.rarity === "reed
+";
 
     resultTitle.textContent = isEpic ? "🔥 Эпический выигрыш" : "🎉 Ваш приз:";
     resultPrize.textContent = "";
