@@ -12,10 +12,12 @@ const PRIZES = [
     { name: "290 бонусов", icon: "🥤", weight: 3, rarity: "legendary" },
     { name: "400 бонусов", icon: "💎", weight: 2, rarity: "mythical" },
     { name: "600 бонусов", icon: "💎", weight: 2, rarity: "mythical" },
-    { name: "1000 бонусов", icon: "🎫", weight: 1, rarity: "godlike" }
+    { name: "1000 бонусов", icon: "🎫", weight: 1, rarity: "godlike" },
+     { name: "3000 бонусов", icon: "🎫", weight: 0, rarity: "gold" }
 ];
 
 const DROP_EVERY = [
+    { every: 280, rarity: "gold" },
     { every: 201, rarity: "godlike" },
     { every: 107, rarity: "red" },
     { every: 67, rarity: "mythical" },
