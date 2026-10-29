@@ -256,7 +256,7 @@ body {
 .rarity-legendary { --rarity-color: #a855f7; }
 .rarity-mythical  { --rarity-color: #ec4899; }
 .rarity-red       { --rarity-color: #ff2a22; }
-.rarity-reed   { --rarity-color:  #FF0000; }
+.rarity-godlike  { --rarity-color:  #FF0000; }
 .rarity-gold   { --rarity-color:  #FFD700 ; }
 
 .win-sheet {
