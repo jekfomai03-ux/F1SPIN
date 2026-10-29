@@ -10,7 +10,7 @@ const PRIZES = [
     { name: "130 бонусов", icon: "🕐", weight: 8, rarity: "rare" },
     { name: "390 бонусов", icon: "💰", weight: 6, rarity: "legendary" },
     { name: "290 бонусов", icon: "🥤", weight: 3, rarity: "legendary" },
-    { name: "400 бонусов", icon: "💎", weight: 2, rarity: "mythical" },
+    { name: "550 бонусов", icon: "💎", weight: 2, rarity: "mythical" },
     { name: "600 бонусов", icon: "💎", weight: 2, rarity: "mythical" },
     { name: "1000 бонусов", icon: "🎫", weight: 1, rarity: "godlike" },
      { name: "3000 бонусов", icon: "🎫", weight: 0, rarity: "gold" }
