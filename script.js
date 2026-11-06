@@ -17,7 +17,7 @@ const PRIZES = [
 ];
 
 const DROP_EVERY = [
-    { every: 125, rarity: "gold" },
+    { every: 113, rarity: "gold" },
     { every: 67, rarity: "red" },
     { every: 39, rarity: "mythical" },
     { every: 21, rarity: "legendary" },
