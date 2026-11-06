@@ -1,7 +1,7 @@
 const WIN_INDEX = 52;
 const STRIP_LENGTH = 60;
 const SPIN_DURATION = 8500;
-
+ 
 const PRIZES = [
     { name: "20 бонусов", icon: "⏳", weight: 30, rarity: "common" },
     { name: "30 бонусов", icon: "⏳", weight: 22, rarity: "common" },
