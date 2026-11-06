@@ -12,17 +12,16 @@ const PRIZES = [
     { name: "290 бонусов", icon: "🥤", weight: 3, rarity: "legendary" },
     { name: "550 бонусов", icon: "💎", weight: 2, rarity: "mythical" },
     { name: "600 бонусов", icon: "💎", weight: 2, rarity: "mythical" },
-    { name: "1000 бонусов", icon: "🎫", weight: 1, rarity: "godlike" },
+    { name: "1000 бонусов", icon: "🎫", weight: 1, rarity: "red" },
      { name: "3000 бонусов", icon: "🎫", weight: 0, rarity: "gold" }
 ];
 
 const DROP_EVERY = [
     { every: 125, rarity: "gold" },
-    { every: 67, rarity: "godlike" },
-    { every: 39, rarity: "red" },
-    { every: 21, rarity: "mythical" },
-    { every: 7, rarity: "legendary" },
-    { every: 0, rarity: "rare" }
+    { every: 67, rarity: "red" },
+    { every: 39, rarity: "mythical" },
+    { every: 21, rarity: "legendary" },
+    { every: 7, rarity: "rare" }
 ];
 
 const spinSound = new Audio("go-new-gambling.mp3");
