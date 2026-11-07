@@ -17,11 +17,11 @@ const PRIZES = [
 ];
 
 const DROP_EVERY = [
-    { every: 113, rarity: "gold" },
-    { every: 67, rarity: "red" },
-    { every: 39, rarity: "mythical" },
-    { every: 21, rarity: "legendary" },
-    { every: 7, rarity: "rare" }
+    { every: 107, rarity: "gold" },
+    { every: 50, rarity: "red" },
+    { every: 23, rarity: "mythical" },
+    { every: 13, rarity: "legendary" },
+    { every: 5, rarity: "rare" }
 ];
 
 const spinSound = new Audio("go-new-gambling.mp3");
